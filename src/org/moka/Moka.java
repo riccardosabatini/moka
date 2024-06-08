@@ -23,6 +23,7 @@ import org.moka.plugins.*;
 
 
 import org.moka.structures.*;
+import org.moka.structures.Module;
 import org.moka.tools.*;
 import org.moka.tools.gui.*;
 

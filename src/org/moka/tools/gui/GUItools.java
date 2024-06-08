@@ -187,9 +187,12 @@ public class GUItools {
 			Object _this) {
 //		Look for the image.
 		
-    	URLClassLoader urlLoader = (URLClassLoader)_this.getClass().getClassLoader();
-		URL imageURL = urlLoader.findResource(imgLocation);
+//    	URLClassLoader urlLoader = (URLClassLoader)_this.getClass().getClassLoader();
+//		URL imageURL = urlLoader.findResource(imgLocation);
 		
+		ClassLoader classLoader = _this.getClass().getClassLoader();
+        URL imageURL = classLoader.getResource(imgLocation);
+        
 //		Create and initialize the button.
 		JButton button = new JButton();
 		button.setActionCommand(actionCommand);
@@ -209,8 +212,11 @@ public class GUItools {
  
     public static ImageIcon createImageIcon(String path, Object _this) {
     	
-    	URLClassLoader urlLoader = (URLClassLoader)_this.getClass().getClassLoader();
-		URL imgURL = urlLoader.findResource(path);
+//    	URLClassLoader urlLoader = (URLClassLoader)_this.getClass().getClassLoader();
+//		URL imgURL = urlLoader.findResource(path);
+		
+		ClassLoader classLoader = _this.getClass().getClassLoader();
+        URL imgURL = classLoader.getResource(path);
         
         if (imgURL != null) {
             return new ImageIcon(imgURL);

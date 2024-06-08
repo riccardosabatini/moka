@@ -1,4 +1,3 @@
-
 import java.util.logging.*;
 import java.awt.EventQueue;
 import javax.swing.JFrame;

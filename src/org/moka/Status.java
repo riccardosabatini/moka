@@ -5,6 +5,8 @@ import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Hashtable;
@@ -129,10 +131,14 @@ public class Status implements Serializable {
 
         String fileAtoms = "org/moka/common/atomsData.txt";
 
-		URLClassLoader urlLoader = (URLClassLoader) this.getClass().getClassLoader();
+        ClassLoader classLoader = getClass().getClassLoader();
+        InputStream inputStream = classLoader.getResourceAsStream(fileAtoms);
+        LineNumberReader lnr = new LineNumberReader(new InputStreamReader(inputStream));
+        
+		//URLClassLoader urlLoader = (URLClassLoader) this.getClass().getClassLoader();
 		//URL fileURL = urlLoader.findResource(fileAtoms).getFile();
-
-        LineNumberReader lnr = new LineNumberReader(new FileReader(urlLoader.findResource(fileAtoms).getFile()));
+		//LineNumberReader lnr = new LineNumberReader(new FileReader(urlLoader.findResource(fileAtoms).getFile()));
+        
 		lnr.setLineNumber(0);
 		String line = lnr.readLine();
         int nLine = 0;
