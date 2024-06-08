@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project default="create_run_jar" name="Create Runnable Jar for Project moka with Jar-in-Jar Loader">
+<!--this file was created by Eclipse Runnable JAR Export Wizard-->
+<!--ANT 1.7 is required                                        -->
+<target name="create_run_jar">
+<jar destfile="/Users/riki/Desktop/Moka.jar">
+<manifest>
+<attribute name="Main-Class" value="org.eclipse.jdt.internal.jarinjarloader.JarRsrcLoader"/>
+<attribute name="Rsrc-Main-Class" value="Launcher"/>
+<attribute name="Class-Path" value="."/>
+<attribute name="Rsrc-Class-Path" value="./ aida-3.3.jar forms.jar Jama-1.0.2.jar javaGeom-0.6.1.jar jfreechart-1.0.9.jar jhplot.jar jscience.jar mathParser.jar osp.jar truezip-6.jar Jmol.jar ant.jar"/>
+</manifest>
+<zipfileset src="jar-in-jar-loader.zip"/>
+<fileset dir="/Users/riki/Develop/java/moka/bin"/>
+<zipfileset dir="/Users/riki/Develop/java/moka/lib" includes="aida-3.3.jar"/>
+<zipfileset dir="/Users/riki/Develop/java/moka/lib" includes="forms.jar"/>
+<zipfileset dir="/Users/riki/Develop/java/moka/lib" includes="Jama-1.0.2.jar"/>
+<zipfileset dir="/Users/riki/Develop/java/moka/lib" includes="javaGeom-0.6.1.jar"/>
+<zipfileset dir="/Users/riki/Develop/java/moka/lib" includes="jfreechart-1.0.9.jar"/>
+<zipfileset dir="/Users/riki/Develop/java/moka/lib" includes="jhplot.jar"/>
+<zipfileset dir="/Users/riki/Develop/java/moka/lib" includes="jscience.jar"/>
+<zipfileset dir="/Users/riki/Develop/java/moka/lib" includes="mathParser.jar"/>
+<zipfileset dir="/Users/riki/Develop/java/moka/lib" includes="osp.jar"/>
+<zipfileset dir="/Users/riki/Develop/java/moka/lib" includes="truezip-6.jar"/>
+<zipfileset dir="/Users/riki/Develop/java/moka/lib" includes="Jmol.jar"/>
+<zipfileset dir="/Users/riki/Develop/java/moka/lib" includes="ant.jar"/>
+</jar>
+</target>
+</project>
